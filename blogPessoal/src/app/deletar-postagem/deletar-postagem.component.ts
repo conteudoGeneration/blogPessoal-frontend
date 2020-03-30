@@ -11,7 +11,7 @@ import { Postagem } from '../model/Postagem';
 export class DeletarPostagemComponent implements OnInit {
 
   postagem = new Postagem()
-  @Output() delOk:boolean  = false
+  delOk:boolean  = false
 
   constructor(private route: ActivatedRoute, private router:Router, private postagemService: PostagemService) { }
 

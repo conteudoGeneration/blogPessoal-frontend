@@ -33,12 +33,13 @@ export class FeedComponent implements OnInit {
     this.findAllPostagens()
 
     if (localStorage.getItem('delOk') == "true"){
+      
       this.alerta = true
       localStorage.clear()
+      
       setTimeout(() => {
         location.assign('/feed')
       }, 2000);
-      
 
     }
     
