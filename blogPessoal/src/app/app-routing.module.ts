@@ -1,3 +1,4 @@
+import { ListaPostComponent } from './lista-post/lista-post.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path:'home', component: HomeComponent },
   { path: 'feed', component: FeedComponent },
   { path: 'editar/:id', component: PutPostagemComponent },
-  { path: 'delete/:id', component: DeletarPostagemComponent }
+  { path: 'delete/:id', component: DeletarPostagemComponent },
+  { path: 'lista-post', component: ListaPostComponent }
 
 ];
 

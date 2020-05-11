@@ -1,13 +1,4 @@
-<div *ngIf="alerta">
-    <div class="alert alert-success fade show" role="alert">
-        Postagem apagada com sucesso!
-    
-    <button type="button" class="close" (click)="fecharAlert()" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
 
-    </div>
-</div>
 
 
 
@@ -23,25 +14,29 @@
                 <div class="card-body ">
                   <h5 class="card-title text-center text-monospace">Thiago Veiga Lima</h5>
                   <p class="card-text text-center text-monospace">Instrutor de desenvolvimento Web Front-end na Generation Brasil</p>
+
                   <a href="https://www.linkedin.com/in/limasthiagos/" class="btn btn-outline-info d-flex justify-content-center mb-3" target="_blank">Linkedin</a>
 
                   <a href="https://github.com/limathiagos" target="_blank" class="btn btn-outline-dark d-flex justify-content-center">GitHub</a>
-                  
+
                   <hr class="mt-4 mb-4">
 
                   <div class="form-inline my-2 my-lg-0 d-flex justify-content-center">
-                    
+
                     <h6 class="mb-3 text-monospace">Pesquisar por título:</h6>
 
                     <input class="form-control mb-3 w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]="titulo">
 
                     <button class="btn btn-outline-warning my-2 my-sm-0 w-75" type="button" (click)="findByNamePostagem()">Pesquisar</button>
-                  
+
                   </div>
                 </div>
             </div>
         </div>
         <div class="col-md-8">
+
+
+
             <div>
                 <h3 class="text-center mb-4 text-monospace">Como tem sido minha experiência na Generation?</h3>
                 <div class="form-group">
@@ -56,14 +51,25 @@
                 <div class="d-flex justify-content-end">
                     <button type="button" class="btn btn-outline-info w-25" (click)="publicar()">Publicar</button>
                 </div>
-    
+
             </div>
             <hr class="mt-5 mb-5">
 
+            <div class="mb-5" *ngIf="alerta">
+                <div class="alert alert-success fade show" role="alert">
+                    Postagem apagada com sucesso!
+                <button type="button" class="close" (click)="fecharAlert()" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+
+                </div>
+            </div>
+
+            <div *ngIf='pesquisa; else listaPadrao'>
             <h3 class="text-monospace text-center">Minhas postagens</h3>
 
             <div class="card mt-5" *ngFor="let postagem of listaPostagens | orderBy : key : reverse">
-                
+
                 <div class="card-header">
                     <div class="row d-flex align-items-center">
                         <div class="col-md-8">
@@ -80,9 +86,9 @@
                             </button>
 
                         </div>
-                    </div>                        
+                    </div>
                 </div>
-                  
+
                 <div class="card-body" >
                   <p class="card-text" aria-describedby="texto">{{postagem.texto}} </p>
                   <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
@@ -90,7 +96,11 @@
                 </div>
             </div>
 
+            </div>
 
+            <ng-template #listaPadrao>
+              <app-lista-post></app-lista-post>
+            </ng-template>
         </div>
 
     </div>

@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import {OrderModule} from 'ngx-order-pipe';
 import { PutPostagemComponent } from './put-postagem/put-postagem.component';
 import { DeletarPostagemComponent } from './deletar-postagem/deletar-postagem.component';
+import { ListaPostComponent } from './lista-post/lista-post.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DeletarPostagemComponent } from './deletar-postagem/deletar-postagem.co
     FooterComponent,
     FeedComponent,
     PutPostagemComponent,
-    DeletarPostagemComponent
+    DeletarPostagemComponent,
+    ListaPostComponent
   ],
   imports: [
     BrowserModule,
